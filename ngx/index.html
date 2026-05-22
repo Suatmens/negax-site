@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>NEGAX</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    background:#050505;
+    color:white;
+    font-family:Arial, sans-serif;
+}
+
+header{
+    height:80px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 55px;
+    background:#070707;
+    border-bottom:1px solid #222;
+    position:sticky;
+    top:0;
+    z-index:10;
+}
+
+.logo{
+    color:#e50914;
+    font-size:34px;
+    font-weight:900;
+    letter-spacing:2px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 18px;
+    font-size:14px;
+}
+
+nav a:hover{
+    color:#e50914;
+}
+
+.icons{
+    font-size:22px;
+}
+
+.hero{
+    min-height:620px;
+    display:flex;
+    align-items:center;
+    padding:70px 70px;
+    background:
+    linear-gradient(to right, #050505 25%, rgba(5,5,5,.6)),
+    url("https://images.unsplash.com/photo-1551028719-00167b16eac5?q=80&w=1600") center/cover;
+    border-bottom:1px solid #222;
+}
+
+.hero-content{
+    max-width:600px;
+}
+
+.hero span{
+    color:#e50914;
+    letter-spacing:6px;
+    font-weight:bold;
+}
+
+.hero h1{
+    font-size:90px;
+    margin:20px 0;
+    line-height:.9;
+}
+
+.hero p{
+    color:#ccc;
+    font-size:22px;
+    line-height:1.5;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:17px 35px;
+    color:white;
+    border:1px solid #e50914;
+    background:rgba(229,9,20,.15);
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:bold;
+    box-shadow:0 0 25px rgba(229,9,20,.4);
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#e50914;
+    transform:translateY(-3px);
+}
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    padding:30px 55px;
+    background:#080808;
+    border-bottom:1px solid #222;
+}
+
+.feature{
+    background:#111;
+    border:1px solid #222;
+    border-radius:14px;
+    padding:25px;
+}
+
+.feature b{
+    color:white;
+}
+
+.feature p{
+    color:#999;
+    margin-bottom:0;
+}
+
+.section-title{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:50px 55px 20px;
+}
+
+.section-title h2{
+    margin:0;
+}
+
+.section-title a{
+    color:#e50914;
+    text-decoration:none;
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+    padding:20px 55px 60px;
+}
+
+.card{
+    background:#111;
+    border:1px solid #252525;
+    border-radius:16px;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 30px rgba(229,9,20,.45);
+}
+
+.card img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card h3{
+    margin:0 0 8px;
+}
+
+.card p{
+    color:#999;
+    margin:0 0 15px;
+}
+
+.price{
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:18px;
+}
+
+.card button{
+    width:100%;
+    padding:14px;
+    background:rgba(229,9,20,.15);
+    border:1px solid #e50914;
+    color:white;
+    border-radius:8px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.card button:hover{
+    background:#e50914;
+}
+
+.banner{
+    margin:0 55px 60px;
+    padding:55px;
+    border-radius:18px;
+    background:
+    linear-gradient(to right,#120000,rgba(0,0,0,.4)),
+    url("https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=1600") center/cover;
+    border:1px solid #333;
+}
+
+.banner span{
+    color:#e50914;
+    letter-spacing:4px;
+    font-weight:bold;
+}
+
+.banner h2{
+    font-size:42px;
+    margin:15px 0;
+}
+
+footer{
+    border-top:1px solid #222;
+    background:#070707;
+    padding:45px 55px;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:30px;
+    color:#aaa;
+}
+
+footer h2{
+    color:#e50914;
+    font-size:34px;
+}
+
+footer h4{
+    color:white;
+}
+
+footer a{
+    display:block;
+    color:#aaa;
+    text-decoration:none;
+    margin:10px 0;
+}
+
+footer a:hover{
+    color:#e50914;
+}
+
+@media(max-width:900px){
+    header{
+        padding:0 20px;
+    }
+
+    nav{
+        display:none;
+    }
+
+    .hero{
+        padding:50px 25px;
+    }
+
+    .hero h1{
+        font-size:60px;
+    }
+
+    .features,
+    .products,
+    footer{
+        grid-template-columns:1fr;
+        padding-left:25px;
+        padding-right:25px;
+    }
+
+    .section-title{
+        padding-left:25px;
+        padding-right:25px;
+    }
+
+    .banner{
+        margin:0 25px 50px;
+        padding:35px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">NEGAX</div>
+
+    <nav>
+        <a href="#">ANASAYFA</a>
+        <a href="#">ÜRÜNLER</a>
+        <a href="#">YENİ GELENLER</a>
+        <a href="#">KATEGORİLER</a>
+        <a href="#">HAKKIMIZDA</a>
+    </nav>
+
+    <div class="icons">⌕ ♡ 🛒</div>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <span>STREET & AESTHETIC</span>
+        <h1>NEGAX</h1>
+        <p>Tarzını yansıtan parçalar. Sınırları zorla.</p>
+        <a href="#" class="btn">ALIŞVERİŞE BAŞLA →</a>
+    </div>
+</section>
+
+<section class="features">
+    <div class="feature">
+        <b>🚚 Ücretsiz Kargo</b>
+        <p>500₺ üzeri siparişlerde</p>
+    </div>
+    <div class="feature">
+        <b>🛡 Güvenli Ödeme</b>
+        <p>256-bit SSL koruma</p>
+    </div>
+    <div class="feature">
+        <b>↩ Kolay İade</b>
+        <p>14 gün içinde iade</p>
+    </div>
+    <div class="feature">
+        <b>🎧 7/24 Destek</b>
+        <p>Her zaman yanınızdayız</p>
+    </div>
+</section>
+
+<div class="section-title">
+    <h2>POPÜLER ÜRÜNLER</h2>
+    <a href="#">TÜMÜNÜ GÖR →</a>
+</div>
+
+<section class="products">
+
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?q=80&w=1000">
+        <div class="card-content">
+            <h3>Black Aesthetic Glasses</h3>
+            <p>Minimal & premium</p>
+            <div class="price">699₺</div>
+            <button>SEPETE EKLE</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=1000">
+        <div class="card-content">
+            <h3>Negax Oversize Hoodie</h3>
+            <p>%100 pamuk - oversize</p>
+            <div class="price">999₺</div>
+            <button>SEPETE EKLE</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=1000">
+        <div class="card-content">
+            <h3>Black Edge Ring</h3>
+            <p>Paslanmaz çelik</p>
+            <div class="price">399₺</div>
+            <button>SEPETE EKLE</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1611085583191-a3b181a88401?q=80&w=1000">
+        <div class="card-content">
+            <h3>Negax Necklace</h3>
+            <p>Kararma yapmaz</p>
+            <div class="price">549₺</div>
+            <button>SEPETE EKLE</button>
+        </div>
+    </div>
+
+</section>
+
+<section class="banner">
+    <span>YENİ KOLEKSİYON</span>
+    <h2>SINIRLARI AŞ</h2>
+    <p>Tarzını ortaya koy. Negax seninle.</p>
+    <a href="#" class="btn">KOLEKSİYONU KEŞFET</a>
+</section>
+
+<footer>
+    <div>
+        <h2>NEGAX</h2>
+        <p>Modern streetwear & aesthetic tarzının adresi.</p>
+    </div>
+
+    <div>
+        <h4>KURUMSAL</h4>
+        <a href="#">Hakkımızda</a>
+        <a href="#">İletişim</a>
+        <a href="#">Gizlilik Politikası</a>
+    </div>
+
+    <div>
+        <h4>MÜŞTERİ HİZMETLERİ</h4>
+        <a href="#">Sipariş Takibi</a>
+        <a href="#">İade & Değişim</a>
+        <a href="#">Sıkça Sorulan Sorular</a>
+    </div>
+
+    <div>
+        <h4>BÜLTEN</h4>
+        <p>Yeniliklerden haberdar olmak için bizi takip et.</p>
+    </div>
+</footer>
+
+</body>
+</html>
